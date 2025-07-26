@@ -61,16 +61,6 @@ export class SalaryComputationService {
     }
   }
 
-//   private convertFromMonthly(payrollPeriod: number, amount: number): number {
-//     switch (payrollPeriod) {
-//       case 1: return amount;
-//       case 2: return amount / 2;
-//       case 3: return amount / 4.33;
-//       case 4: return amount / 22;
-//       default: return amount;
-//     }
-//   }
-
   private calculateIncomeTax(monthlySalary: number): number {
     // Deduct contributions first (tax-exempt)
     const sssContribution = this.calculateSSS(monthlySalary);
@@ -90,9 +80,6 @@ export class SalaryComputationService {
   }
 
   private calculateSSS(monthlySalary: number): number {
-    // 2025 SSS contribution table (employee share only)
-    // Based on official SSS table from https://taxcalculatorphilippines.com/sss-contribution-table-employees-employers
-    
     if (monthlySalary < 5250) return 250; // Below 5,250
     
     // Find the appropriate range

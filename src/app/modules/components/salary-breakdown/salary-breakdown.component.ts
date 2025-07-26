@@ -19,6 +19,7 @@ export class SalaryBreakdownComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log('Input Data Changed:', changes);
     if (changes['inputData'] && this.inputData) {
       this.salaryBreakdown = this.salaryComputationService.calculateSalary(this.inputData);
     }

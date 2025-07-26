@@ -1,0 +1,55 @@
+<div class="custom-dropdown" 
+     (clickOutside)="onClickOutside($event)"
+     [class.disabled]="disabled"
+     [class.focused]="isFocused"
+     [class.open]="isOpen">
+  
+  <!-- Label -->
+  <label *ngIf="label" [for]="id" class="dropdown-label">{{ label }}</label>
+  
+  <!-- Dropdown Trigger -->
+  <div class="dropdown-trigger"
+       [id]="id"
+       [tabindex]="disabled ? -1 : 0"
+       (click)="toggleDropdown()"
+       (keydown)="onKeyDown($event)"
+       role="combobox"
+       [attr.aria-expanded]="isOpen"
+       [attr.aria-haspopup]="true">
+    
+    <div class="selected-option">
+      <span *ngIf="selectedOption?.icon" class="option-icon">
+        <i [class]="selectedOption?.icon"></i>
+      </span>
+      <span class="option-text">
+        {{ selectedOption?.label || placeholder }}
+      </span>
+    </div>
+    
+    <div class="dropdown-arrow">
+      <i class="fas fa-chevron-down" [class.rotated]="isOpen"></i>
+    </div>
+  </div>
+  
+  <!-- Dropdown Options -->
+  <div class="dropdown-options" [class.show]="isOpen">
+    <div class="options-list">
+      <div *ngFor="let option of options; trackBy: trackByValue"
+           class="dropdown-option"
+           [class.selected]="selectedOption?.value === option.value"
+           (click)="selectOption(option)"
+           role="option"
+           [attr.aria-selected]="selectedOption?.value === option.value">
+        
+        <span *ngIf="option.icon" class="option-icon">
+          <i [class]="option.icon"></i>
+        </span>
+        <span class="option-text">{{ option.label }}</span>
+        
+        <span *ngIf="selectedOption?.value === option.value" class="check-icon">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

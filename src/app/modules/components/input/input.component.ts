@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InputModel } from '../../models/input.model';
+import { DropdownOption } from '../../models/dropdown-option.interface';
 
 @Component({
   selector: 'app-input',
@@ -12,11 +13,11 @@ export class InputComponent implements OnInit {
 
   @Output() calculate = new EventEmitter<InputModel>();
 
-  payrollPeriods = [
-    { value: 1, label: 'Monthly' },
-    { value: 2, label: 'Semi-Monthly' },
-    { value: 3, label: 'Bi-Weekly' },
-    { value: 4, label: 'Weekly' }
+  payrollPeriods: DropdownOption[] = [
+    { value: 1, label: 'Monthly', icon: 'fas fa-calendar-alt' },
+    { value: 2, label: 'Semi-Monthly', icon: 'fas fa-calendar-week' },
+    { value: 3, label: 'Bi-Weekly', icon: 'fas fa-calendar-day' },
+    { value: 4, label: 'Weekly', icon: 'fas fa-calendar' }
   ]
 
   inputForm!: FormGroup;

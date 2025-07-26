@@ -3,19 +3,15 @@
     <h1>Philippine Tax & Salary Calculator</h1>
     <p class="subtitle">Calculate your net salary with the current tax rates and contributions</p>
   </header>
-  <!-- Information Section -->
    <div class="info-section">
         <app-notes></app-notes>
    </div>
   <main class="main-content">
-    <!-- Input Section -->
    <app-input (calculate)="calculate($event)"></app-input>
-    <!-- Results Section -->
-    <app-salary-breakdown *ngIf="showBreakdown" [inputData]="inputData"></app-salary-breakdown>
+   <app-salary-breakdown *ngIf="showBreakdown" [inputData]="inputData"></app-salary-breakdown>
   </main>
 </div>
 
-<!-- Simple Developer Footer -->
 <div class="container developer-footer">
     <div class="footer-content">
       <div class="developer-info">
