@@ -1,0 +1,46 @@
+    <section class="results-section" *ngIf="salaryBreakdown">
+      <h2>Salary Breakdown</h2>
+      
+      <div class="breakdown-card">
+        <div class="breakdown-item gross">
+          <span class="label">Gross Salary</span>
+          <span class="amount">{{ salaryBreakdown.grossSalary | pesoCurrency }}</span>
+        </div>
+
+        <div class="breakdown-separator"></div>
+
+        <div class="breakdown-item deduction">
+          <span class="label">Income Tax</span>
+          <span class="amount">-{{ salaryBreakdown.incomeTax | pesoCurrency }}</span>
+        </div>
+
+        <div class="breakdown-item deduction">
+          <span class="label">SSS Contribution</span>
+          <span class="amount">-{{ salaryBreakdown.sssContribution | pesoCurrency}}</span>
+        </div>
+
+        <div class="breakdown-item deduction">
+          <span class="label">PhilHealth Contribution</span>
+          <span class="amount">-{{ salaryBreakdown.philhealthContribution | pesoCurrency}}</span>
+        </div>
+
+        <div class="breakdown-item deduction">
+          <span class="label">Pag-IBIG Contribution</span>
+          <span class="amount">-{{ salaryBreakdown.pagibigContribution | pesoCurrency}}</span>
+        </div>
+
+        <div class="breakdown-separator"></div>
+
+        <div class="breakdown-item total-deductions">
+          <span class="label">Total Deductions</span>
+          <span class="amount">-{{ salaryBreakdown.totalDeductions | pesoCurrency}}</span>
+        </div>
+
+        <div class="breakdown-separator thick"></div>
+
+        <div class="breakdown-item net">
+          <span class="label">Net Salary</span>
+          <span class="amount">{{ salaryBreakdown.netSalary | pesoCurrency}}</span>
+        </div>
+      </div>
+    </section>

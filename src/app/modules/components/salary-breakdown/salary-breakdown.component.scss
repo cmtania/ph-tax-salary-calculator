@@ -1,0 +1,83 @@
+.results-section {
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+  }
+
+  .breakdown-card {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    .breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      font-size: 1rem;
+
+      .label {
+        font-weight: 500;
+        color: #374151;
+      }
+
+      .amount {
+        font-weight: 700;
+        font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
+        letter-spacing: -0.025em;
+      }
+
+      &.gross {
+        .amount {
+          color: #059669;
+          font-size: 1.125rem;
+        }
+      }
+
+      &.deduction {
+        .amount {
+          color: #dc2626;
+        }
+      }
+
+      &.total-deductions {
+        .label {
+          font-weight: 600;
+        }
+        .amount {
+          color: #dc2626;
+          font-size: 1.125rem;
+        }
+      }
+
+      &.net {
+        .label {
+          font-weight: 700;
+          font-size: 1.125rem;
+          color: #1f2937;
+        }
+        .amount {
+          color: #059669;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .breakdown-separator {
+      height: 1px;
+      background-color: #f3f4f6;
+      margin: 0.5rem 0;
+
+      &.thick {
+        height: 2px;
+        background-color: #e5e7eb;
+        margin: 1rem 0;
+      }
+    }
+  }
+}

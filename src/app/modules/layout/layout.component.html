@@ -1,0 +1,36 @@
+<div class="container">
+  <header class="header">
+    <h1>Philippine Tax & Salary Calculator</h1>
+    <p class="subtitle">Calculate your net salary with the current tax rates and contributions</p>
+  </header>
+  <!-- Information Section -->
+   <div class="info-section">
+        <app-notes></app-notes>
+   </div>
+  <main class="main-content">
+    <!-- Input Section -->
+   <app-input (calculate)="calculate($event)"></app-input>
+    <!-- Results Section -->
+    <app-salary-breakdown *ngIf="showBreakdown" [inputData]="inputData"></app-salary-breakdown>
+  </main>
+</div>
+
+<!-- Simple Developer Footer -->
+<div class="container developer-footer">
+    <div class="footer-content">
+      <div class="developer-info">
+        <span>Developed by Christian Tania</span>
+        <div class="social-links">
+          <a href="{{contact.Github}}" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="{{contact.Linkedin}}" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="{{contact.Email}}" target="_blank" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+.info-section {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  border-left: 4px solid #6b7280;
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+  }
+
+  .info-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #4b5563;
+    line-height: 1.6;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
